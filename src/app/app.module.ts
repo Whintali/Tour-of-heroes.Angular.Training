@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   imports: [
@@ -13,12 +15,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: DashboardComponent },
-    ])
+      
+    ]),
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    DetailsComponent
   ],
   bootstrap: [
     AppComponent
