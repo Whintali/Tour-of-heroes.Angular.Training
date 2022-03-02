@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Hero,heroes } from '../heroes';
 import { ActivatedRoute } from '@angular/router';
+import { HeroService } from '../service/hero/hero.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -17,5 +18,11 @@ export class DetailsComponent implements OnInit {
     const heroIdFromRoute = Number(routeParams.get('heroId'))
     this.hero = heroes.find(hero => hero.id === heroIdFromRoute)
   }
+  save()
+  { 
+    if (this.hero) {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }}
 
 }
