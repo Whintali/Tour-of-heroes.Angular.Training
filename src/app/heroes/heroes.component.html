@@ -1,3 +1,18 @@
+<div style="margin:10">
+<h2 style="text-align: center; font-weight:bold">Add a hero</h2>
+<label for="new-hero">Hero name: </label>
+<input id="new-hero" #heroName /> 
+<label for="new-hero">Hero class: </label>
+<input id="new-hero" #heroClass />&nbsp;
+<!-- (click) passes input value to add() and then clears the input -->
+<button type="button" class="add-button" (click)="addHero(heroName.value,heroClass.value,heroDesc.value,0); heroName.value='';heroClass.value='';heroDesc.value=''">
+Add hero
+</button>
+<label for="new-hero">Hero desc: </label>
+<input id="new-hero" #heroDesc />
+
+
+</div>
 <h2 style="text-align: center; font-weight:bold">Heroes</h2>
 <ul class="heroes">
 <li *ngFor="let hero of heroes">
@@ -5,6 +20,7 @@
     <span class="badge">{{hero.id}}</span>
     <span class="name">{{hero.name}}</span>
   </button>
+  <button type="button" class="delete" title="delete hero" (click)="delete(hero)">delete</button>
 </li>
 </ul>
 

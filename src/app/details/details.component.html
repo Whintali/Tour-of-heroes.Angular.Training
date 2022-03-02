@@ -2,12 +2,13 @@
 <h2 style="text-align:center; font-weight:bold">Detailled Informations</h2>
   <div style="margin-left:20px" *ngIf ="hero">
   <p>id : {{hero.id}} <br><br></p>
-  <input nameInput placeholder="{{hero.name}}">  
+  <input id="hero-name" [(ngModel)]="hero.name" placeholder="{{hero.name}}">  
   <div *ngIf="hero.desc">
     <p>desc : {{hero.desc}}</p>
   </div>
   <p>
-    class : {{hero.class}}<br>
+    class : {{hero.classH}}<br>
   </p>
-  <button type="button" (click)="save()">save</button>
+  <button type="button" (click)="save()">save</button>&nbsp;
+  <button type="button" (click)="goBack()">back</button>
 </div>

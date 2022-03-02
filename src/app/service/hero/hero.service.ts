@@ -19,5 +19,15 @@ export class HeroService {
       const url = `${this.heroesUrl}/${id}`;
       return this.http.get<Hero>(url)
     }
+    httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    updateHero(hero: Hero): Observable<any> {
+      return this.http.put(this.heroesUrl, hero, this.httpOptions);
+    }
+    addHero(hero: Hero): Observable<Hero> {
+      return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions)
+      ;
+    }
 
 }
