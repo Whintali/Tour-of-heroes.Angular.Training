@@ -23,9 +23,17 @@
   align-items: stretch;
   height: 1.8em;
 }
-
+.heroes .delete{
+  display: block;
+  font-size: small;
+  color: white;
+  padding: 0em 0.7em 0 0.7em;
+  background-color: #405061;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
 .heroes button:hover {
-  color: #2c3a41;
+  color: #ffffff;
   background-color: #e6e6e6;
   left: .1em;
 }
@@ -44,10 +52,13 @@
   background-color: #505050;
   color: white;
 }
+.heroes button text{
+  color: red;
+}
 
 .heroes button.selected:active {
   background-color: black;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .heroes .badge {
@@ -63,4 +74,10 @@
 
 .heroes .name {
   align-self: center;
+  color: rgb(190, 180, 180);
+}
+
+.AddHero button{
+  flex:1;
+  padding: 5 10 5 10;
 }

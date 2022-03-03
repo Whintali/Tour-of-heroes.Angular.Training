@@ -14,7 +14,6 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './service/others/in-memory-data.service';
 import { TestPipe } from './test.pipe';
 
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -35,7 +34,7 @@ import { TestPipe } from './test.pipe';
     HeroesComponent,
     DashboardComponent,
     DetailsComponent,
-    TestPipe
+    TestPipe,
   ],
   bootstrap: [
     AppComponent
@@ -43,9 +42,3 @@ import { TestPipe } from './test.pipe';
 })
 export class AppModule { }
 
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

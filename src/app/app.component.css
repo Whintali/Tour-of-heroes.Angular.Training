@@ -1,8 +1,5 @@
-
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+button {
+  color: #e6e6e6;
+  background-color: #2c3a41;
+  left: .1em;
+}

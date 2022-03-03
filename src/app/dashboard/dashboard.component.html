@@ -1,4 +1,4 @@
-<h2 style="text-align: center; font-weight:bold">Top Heroes</h2>
-<div style="display:inline-block;" *ngFor="let hero of heroes | test:'hero.damage_dealt'">
-  <a [routerLink]="['../details', hero.id]"><button type="button"style="width:500; height:10%; margin:10 10">{{hero.name}}</button></a>
+<h2 style="text-align: center; font-weight:bold">Top Heroes (Damage Dealt)</h2>
+<div style="display:inline-block;" *ngFor="let hero of heroes | slice:0:4">
+  <a [routerLink]="['../details', hero.id]"><button type="button"style="width:500; height:10%; margin:10 10">{{hero.name}} - {{hero.damage_dealt}} (Total Damage)</button></a>
 </div>

@@ -13,49 +13,49 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 1,
         name: 'Matho',
         desc: 'A good hero',
-        class: 'Sorcerer',
+        classH: 'Sorcerer',
         damage_dealt: '10000'
       },
       {
         id:2,
         name: 'Ada',
         desc:'A great healer',
-        class: 'bard',
+        classH: 'bard',
         damage_dealt: '150',
       },
       {
         id: 3,
         name: 'Val',
         desc: '',
-        class: 'Paladin',
+        classH: 'Paladin',
         damage_dealt: '1500',
       },
       {
         id: 4,
         name: 'Greg',
         desc: 'A good wizard',
-        class: 'Sorcerer',
+        classH: 'Sorcerer',
         damage_dealt: '8500',
       },
       {
         id: 5,
         name: 'Keld',
         desc: 'A good human',
-        class: 'Warrior',
+        classH: 'Warrior',
         damage_dealt: '3500',
       },
       {
         id: 6,
         name: 'Devo',
         desc: '',
-        class: 'Assassin',
+        classH: 'Assassin',
         damage_dealt: '25000'
       },
       {
         id: 7,
         name: 'Mag',
         desc: 'A good tank',
-        class: 'Berserker',
+        classH: 'Berserker',
         damage_dealt: '8500'
       }
     ];

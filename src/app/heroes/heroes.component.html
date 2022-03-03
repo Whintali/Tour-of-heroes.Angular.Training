@@ -1,15 +1,19 @@
-<div style="margin:10">
+<div style="margin:10" class="AddHero">
 <h2 style="text-align: center; font-weight:bold">Add a hero</h2>
 <label for="new-hero">Hero name: </label>
 <input id="new-hero" #heroName /> 
 <label for="new-hero">Hero class: </label>
 <input id="new-hero" #heroClass />&nbsp;
-<!-- (click) passes input value to add() and then clears the input -->
-<button type="button" class="add-button" (click)="addHero(heroName.value,heroClass.value,heroDesc.value,0); heroName.value='';heroClass.value='';heroDesc.value=''">
+<button type="button" class="add-button" style="background-color:#405061" (click)="addHero(heroName.value,heroClass.value,heroDesc.value,heroDmg.value); heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
 Add hero
-</button>
+</button> 
 <label for="new-hero">Hero desc: </label>
-<input id="new-hero" #heroDesc />
+<input id="new-hero" #heroDesc />&nbsp;
+<button type="button" class="cancel-button" style="background-color:#405061" (click)="heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
+Cancel
+</button>
+<label for="new-hero">Hero Dmg: </label>
+<input id="new-hero" [(ngModel)]="Dmg" #heroDmg (keypress)="onKeyPressChange($event)"/>
 
 
 </div>
@@ -20,14 +24,15 @@ Add hero
     <span class="badge">{{hero.id}}</span>
     <span class="name">{{hero.name}}</span>
   </button>
-  <button type="button" class="delete" title="delete hero" (click)="delete(hero)">delete</button>
+  <button type="button" class="delete" title="delete hero" (click)="deleteHero(hero.id)">Delete</button>
 </li>
 </ul>
 
-<div *ngIf="selectedHero">
+<div style="margin-left:10" *ngIf="selectedHero">
 
 <h2>{{selectedHero.name | uppercase}} is your hero</h2>
-<a [routerLink]="['../details', selectedHero.id]"><button type="button">Edit</button></a>
+<a [routerLink]="['../details', selectedHero.id]"><button style="background-color:#405061" type="button">Edit</button></a>
+</div>
 
 
 
