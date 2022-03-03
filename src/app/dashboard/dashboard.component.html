@@ -1,6 +1,4 @@
 <h2 style="text-align: center; font-weight:bold">Top Heroes</h2>
-<div style="display:inline-block;" *ngFor="let hero of heroes | keyvalue(damage_dealt,id)">
-  <div *ngIf="hero.damage_dealt > 5000">
+<div style="display:inline-block;" *ngFor="let hero of heroes | test:'hero.damage_dealt'">
   <a [routerLink]="['../details', hero.id]"><button type="button"style="width:500; height:10%; margin:10 10">{{hero.name}}</button></a>
-  </div>
 </div>
