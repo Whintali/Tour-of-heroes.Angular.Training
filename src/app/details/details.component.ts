@@ -14,6 +14,7 @@ export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private heroService:HeroService,private location: Location) { }
   //hero: Hero | undefined;
   heroe: Hero | undefined;
+  damage_dealt !: string;
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const heroIdFromRoute = Number(routeParams.get('heroId'));

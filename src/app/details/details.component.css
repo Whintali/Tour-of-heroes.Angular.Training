@@ -1,0 +1,10 @@
+.detail{
+  margin:5% 30%;
+  padding-top: 2%;
+  border: solid #2c3a41 ;
+  border-radius: 4px 4px 4px 4px;;
+  width: 40%;
+  text-align: center;
+  height: 50%;
+  box-shadow: 10px 5px 5px #2c3a41;
+}

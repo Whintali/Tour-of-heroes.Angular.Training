@@ -11,7 +11,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const heroes = [
       {
         id: 1,
-        name: 'Matho',
+        name: 'Mato',
         desc: 'A good hero',
         classH: 'Sorcerer',
         damage_dealt: '10000'

@@ -1,21 +1,21 @@
-<div style="margin:10" class="AddHero">
 <h2 style="text-align: center; font-weight:bold">Add a hero</h2>
-<label for="new-hero">Hero name: </label>
-<input id="new-hero" #heroName /> 
-<label for="new-hero">Hero class: </label>
-<input id="new-hero" #heroClass />&nbsp;
-<button type="button" class="add-button" style="background-color:#405061" (click)="addHero(heroName.value,heroClass.value,heroDesc.value,heroDmg.value); heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
-Add hero
-</button> 
-<label for="new-hero">Hero desc: </label>
-<input id="new-hero" #heroDesc />&nbsp;
-<button type="button" class="cancel-button" style="background-color:#405061" (click)="heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
-Cancel
-</button>
-<label for="new-hero">Hero Dmg: </label>
-<input id="new-hero" [(ngModel)]="Dmg" #heroDmg (keypress)="onKeyPressChange($event)"/>
-
-
+<div class="AddHero">
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName /> 
+  <label for="new-hero">Hero class: </label>
+  <input id="new-hero" #heroClass />
+  <label for="new-hero">Hero desc: </label>
+  <input id="new-hero" #heroDesc />
+  <label for="new-hero">Hero Dmg: </label>
+  <input type="number" id="new-hero" [(ngModel)]="Dmg" #heroDmg />
+  <br>
+  <button type="button" class="add-button" style="background-color:#405061" (click)="addHero(heroName.value,heroClass.value,heroDesc.value,heroDmg.value); heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
+    Add hero
+  </button> 
+  &nbsp; 
+  <button type="button" class="cancel-button" style="background-color:#405061" (click)="heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
+    Cancel
+  </button>
 </div>
 <h2 style="text-align: center; font-weight:bold">Heroes</h2>
 <ul class="heroes">
@@ -30,8 +30,8 @@ Cancel
 
 <div style="margin-left:10" *ngIf="selectedHero">
 
-<h2>{{selectedHero.name | uppercase}} is your hero</h2>
-<a [routerLink]="['../details', selectedHero.id]"><button style="background-color:#405061" type="button">Edit</button></a>
+<h2>{{selectedHero.name | uppercase}} is a {{selectedHero.classH | uppercase}}</h2>
+<a [routerLink]="['../details', selectedHero.id]"><button style="background-color:#405061" type="button">Go to details</button></a>
 </div>
 
 

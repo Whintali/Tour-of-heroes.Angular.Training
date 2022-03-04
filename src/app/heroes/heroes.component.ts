@@ -19,14 +19,6 @@ export class HeroesComponent implements OnInit{
   ngOnInit(): void {
     this.getHeroes()
   }
-
-  onKeyPressChange(event : any){
-    console.log(event.target.value)
-    if(isNaN(Number(event.target.value))){
-        this.Dmg = this.Dmg.substring(0, this.Dmg.length - 1);
-        alert("Only num")
-    }
-  }
   
 
   onSelect(hero: Hero): void {
@@ -45,19 +37,32 @@ export class HeroesComponent implements OnInit{
       return;
     }
     else{
-    damage_dealt = damage_dealt.trim();
-    if (!damage_dealt) { return; }
-    name = name.trim();
-    if (!name) { return; }
-    classH = classH.trim();
-    if (!classH) { return; }
-    desc = desc.trim();
-    if (!desc) { return; }
-    this.heroService.addHero({ name,classH,desc,damage_dealt } as unknown as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
-      });}}
-
+      if(damageD<0){
+        alert("Only positive number ! (Not push)") 
+        return;
+        }
+      else {
+        damage_dealt = damage_dealt.trim();
+        if (!damage_dealt) { 
+          return; 
+        }
+        name = name.trim();
+        if (!name) { 
+          return; 
+        }
+        classH = classH.trim();
+        if (!classH) { 
+          return; 
+        }
+        desc = desc.trim();
+        if (!desc) { 
+          return; 
+        }
+        this.heroService.addHero({ name,classH,desc,damage_dealt } as unknown as Hero)
+        .subscribe(hero => {this.heroes.push(hero);});
+      }
+    }
+  }
 }
 
 
