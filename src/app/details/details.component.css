@@ -5,6 +5,14 @@
   border-radius: 4px 4px 4px 4px;;
   width: 40%;
   text-align: center;
-  height: 50%;
+  height: 55%;
   box-shadow: 10px 5px 5px #2c3a41;
+}
+.detail input{
+  width: 180px;
+  height: 35px;
+}
+.detail select{
+  width: 180px;
+  height: 35px;
 }

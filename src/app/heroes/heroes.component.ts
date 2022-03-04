@@ -9,7 +9,8 @@ import { HeroService } from '../service/hero/hero.service';
 export class HeroesComponent implements OnInit{
   //Variable
   heroes:Hero[]=[];
-  Dmg !: string ;
+  Dmg !: number ;
+  verif !: string ;
   selectedHero?: Hero;
 
   //Constructor
@@ -19,7 +20,21 @@ export class HeroesComponent implements OnInit{
   ngOnInit(): void {
     this.getHeroes()
   }
-  
+  OnChange(event:any){
+    Number(event.target.value);
+    if(isNaN(event.target.value)){
+      if(event.target.value.length>16){
+        this.verif = "";
+        alert("Name too long, 15 maximum characters");
+      }
+    }
+    else{
+      if(Number(event.target.value)>30000){
+        this.Dmg = 0;
+        alert("Damage too high, cannot exceed 30000");
+      }
+    }
+  }
 
   onSelect(hero: Hero): void {
   this.selectedHero = hero;
@@ -55,9 +70,6 @@ export class HeroesComponent implements OnInit{
           return; 
         }
         desc = desc.trim();
-        if (!desc) { 
-          return; 
-        }
         this.heroService.addHero({ name,classH,desc,damage_dealt } as unknown as Hero)
         .subscribe(hero => {this.heroes.push(hero);});
       }

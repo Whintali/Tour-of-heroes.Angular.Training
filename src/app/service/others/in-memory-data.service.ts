@@ -20,7 +20,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id:2,
         name: 'Ada',
         desc:'A great healer',
-        classH: 'bard',
+        classH: 'Bard',
         damage_dealt: '150',
       },
       {
@@ -57,6 +57,27 @@ export class InMemoryDataService implements InMemoryDbService {
         desc: 'A good tank',
         classH: 'Berserker',
         damage_dealt: '8500'
+      },
+      {
+        id: 8,
+        name: 'Dom',
+        desc: '',
+        classH: 'Bard',
+        damage_dealt: '2500'
+      },
+      {
+        id: 9,
+        name: 'Fin',
+        desc: 'A good damage dealer',
+        classH: 'Assassin',
+        damage_dealt: '9650'
+      },
+      {
+        id: 10,
+        name: 'Gol',
+        desc: '',
+        classH: 'Demonist',
+        damage_dealt: '18500'
       }
     ];
     return {heroes};

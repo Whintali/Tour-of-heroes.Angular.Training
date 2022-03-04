@@ -1,14 +1,23 @@
 <h2 style="text-align: center; font-weight:bold">Add a hero</h2>
 <div class="AddHero">
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName /> 
+  <input id="new-hero" [(ngModel)]="verif" #heroName (change)="OnChange($event)"/> 
   <label for="new-hero">Hero class: </label>
-  <input id="new-hero" #heroClass />
+  <select id="new-hero" name="class" #heroClass>
+    <option value="" style="color:lightgrey" hidden>Select a class</option>
+    <option value="Sorcerer">Sorcerer</option>
+    <option value="Bard">Bard</option>
+    <option value="Paladin">Paladin</option>
+    <option value="Warrior">Warrior</option>
+    <option value="Assassin">Assassin</option>
+    <option value="Berserker">Berserker</option>
+    <option value="Demonist">Demonist</option>
+  </select>
+  <br><br>
   <label for="new-hero">Hero desc: </label>
   <input id="new-hero" #heroDesc />
   <label for="new-hero">Hero Dmg: </label>
-  <input type="number" id="new-hero" [(ngModel)]="Dmg" #heroDmg />
-  <br>
+  <input type="number" id="new-hero" [(ngModel)]="Dmg" (change)="OnChange($event)" #heroDmg /> <br>
   <button type="button" class="add-button" style="background-color:#405061" (click)="addHero(heroName.value,heroClass.value,heroDesc.value,heroDmg.value); heroName.value='';heroClass.value='';heroDesc.value='';heroDmg.value='';">
     Add hero
   </button> 

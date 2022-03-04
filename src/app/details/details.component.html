@@ -3,13 +3,22 @@
   <div class="detail"  *ngIf ="heroe">
     <label>id  : {{heroe.id}} </label><br>
     <label for="hero-name">name :</label>
-    <input id="hero-name" [(ngModel)]="heroe.name" placeholder="{{heroe.name}}"><br> 
+    <input id="hero-name" [(ngModel)]="heroe.name" (change)="OnChange($event)" placeholder="{{heroe.name}}"><br> 
     <label for="hero-desc">desc :</label>
     <input id="hero-desc" [(ngModel)]="heroe.desc" placeholder="{{heroe.desc}}"><br>
     <label for="hero-class">class :</label>
-    <input id="hero-class" [(ngModel)]="heroe.classH" placeholder="{{heroe.classH}}"><br>
+    <select id="new-hero" [(ngModel)]="heroe.classH" name="class">
+      <option value="Sorcerer">Sorcerer</option>
+      <option value="Bard">Bard</option>
+      <option value="Paladin">Paladin</option>
+      <option value="Warrior">Warrior</option>
+      <option value="Assassin">Assassin</option>
+      <option value="Berserker">Berserker</option>
+      <option value="Demonist">Demonist</option>
+    </select>
+    <br><br>
     <label for="hero-dmg">Total Damage :</label>
-    <input type="number" id="hero-dmg" [(ngModel)]="heroe.damage_dealt" placeholder="{{heroe.damage_dealt}}"><br>
+    <input type="number" id="hero-dmg" [(ngModel)]="heroe.damage_dealt" (change)="OnChange($event)" placeholder="{{heroe.damage_dealt}}"><br>
   
   <button type="button" style="background-color:#405061" (click)="save()">save</button>&nbsp;
   <button type="button" style="background-color:#405061" (click)="goBack()">back</button>

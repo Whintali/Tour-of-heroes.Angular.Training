@@ -8,9 +8,14 @@ import { HeroService } from '../service/hero/hero.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  //Variable
   heroes:Hero[]=[];
+  
+  //Constructor
   constructor(private heroService:HeroService) {
   }
+
+  //Methods
   ngOnInit(): void {
     this.getHeroes();
   }

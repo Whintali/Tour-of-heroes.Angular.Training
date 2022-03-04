@@ -6,7 +6,7 @@
   border-radius: 4px 4px 4px 4px;;
   width: 40%;
   text-align: center;
-  height: 45%;
+  height: 60%;
   box-shadow: 10px 5px 5px #2c3a41;
 }
 
@@ -87,10 +87,18 @@
     border-radius: 4px 4px 4px 4px;;
     width: 40%;
     text-align: center;
-    height: 45%;
+    height: 50%;
     box-shadow: 10px 5px 5px #2c3a41;
 }
 .AddHero button{
   flex:1;
   padding: 5 10 5 10;
+}
+.AddHero input{
+  width: 180px;
+  height: 35px;
+}
+.AddHero select{
+  width: 180px;
+  height: 35px;
 }
